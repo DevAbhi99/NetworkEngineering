@@ -91,3 +91,18 @@ for i in range(1, count+1):
     lists.remove(0)
 
 print(lists)
+
+
+#Two Dimensional list
+
+twod=[[1,2,3],[4,5,6]]
+
+print(twod)
+
+row=len(twod)
+
+col=len(twod[0])
+
+print(row)
+
+print(col)
