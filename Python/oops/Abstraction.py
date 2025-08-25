@@ -1,24 +1,47 @@
-#Abstraction stands for detail hiding
+# An abstract class can have atleast one abstract method and also if there are multiple abstract method in abstract class then the child class inheriting the abstract class must implement atleast one abstract method
 
 
-class Vehicle:
-    def __init__(self):
-        self.engine=True
-    
-    def carStart(self):
-        print('Car has started')
-    
-    def carStop(self):
-        print('Car has stopped')
-    
+from abc import ABC, abstractmethod
+
+
+class Vehicle(ABC):
+
+    @abstractmethod
     def start(self):
-        if(self.engine==True):
-            self.carStart()
-        else:
-            self.carStop()
+        pass
+
+    @abstractmethod
+    def stop(self):
+        pass
+
+    def horn(self):
+        print('Honk!')
 
 
+class Car(Vehicle):
+    def start(self):
+        print('Starts with a key')
+    
+    def stop(self):
+        print('Stops with a key')
 
-obj=Vehicle()
 
-obj.start()
+class Scooty(Vehicle):
+    def start(self):
+        print('Starts with a kick')
+    
+    def stop(self):
+        print('Stops with a break')
+
+
+obj1=Car()
+
+obj2=Scooty()
+
+obj1.start()
+
+obj1.stop()
+
+obj2.start()
+
+obj2.stop()

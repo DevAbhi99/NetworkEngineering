@@ -1,23 +1,18 @@
+#We are going to learn about classes, contructors and objects 
+
 class Employee:
-
-    profession="Software Developer"
-
-    def __init__(self, name, salary):   #Creating contructor
+    def __init__(self, name, age):
         self.name=name
-        self.salary=salary
+        self.age=age
     
-    def skills(self):                        #Creating functions
-        print("Hi I am a ",self.profession)
+
+    def about(self):
+        return 'My name is',self.name,' and my age is', self.age
+    
 
 
 
-#Creating object
+obj=Employee('Karan', 21)
 
-obj=Employee("Karan", 45000)
 
-print(obj.name)
-
-print(obj.salary)
-
-obj.skills()
-
+print(obj.about())
